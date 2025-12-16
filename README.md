@@ -5,15 +5,17 @@ Sistema desenvolvido para a atividade de Verificação e Validação de Software
 ## Estrutura do Projeto
 
 ```
-trabalho lucas/
+verificacao e validacao/
 ├── src/
 │   ├── user_system.py      # Sistema principal de cadastro
 │   └── validators.py       # Funções de validação (e-mail e senha)
 ├── tests/
+│   ├── user_register.py    # Sistema de interface de execução de cadastros
 │   └── test_user_system.py # Testes automatizados
 ├── plano_testes.md         # Plano de testes funcionais
 ├── requirements.txt        # Dependências do projeto
-└── README.md              # Este arquivo
+├── dados_usuarios.json     # Dados dos usuários
+└── README.md               # Este arquivo
 ```
 
 ## Requisitos do Sistema
@@ -45,7 +47,7 @@ python3 --version
 #### 2. Executar os Testes Automatizados
 ```bash
 # Navegue até o diretório do projeto
-cd "trabalho lucas"
+cd "Verificacao validacao"
 
 # Execute os testes
 python3 -m unittest tests.test_user_system -v
@@ -53,18 +55,8 @@ python3 -m unittest tests.test_user_system -v
 
 **Resultado esperado:** 11 testes executados com sucesso ✅
 
-#### 3. Gerar o Relatório em PDF
 
-**Opção A - Script Python (recomendado):**
-```bash
-pip install reportlab
-python3 gerar_relatorio.py
-```
-
-**Opção B - Converter Markdown:**
-- Abra `relatorio.md` e use um conversor online (ex: markdowntopdf.com)
-
-#### 4. Testar o Sistema Manualmente (Opcional)
+#### 3. Testar o Sistema Manualmente (Opcional)
 Crie um arquivo `exemplo_uso.py` na raiz do projeto:
 
 ```python
@@ -102,7 +94,6 @@ Execute:
 python3 exemplo_uso.py
 ```
 
-### 📖 Para instruções detalhadas, consulte `PASSO_A_PASSO.md`
 
 ## Resultados dos Testes
 
@@ -130,4 +121,4 @@ Os testes automatizados validam:
 - O sistema utiliza `unittest`, que já vem incluído no Python.
 - Não são necessárias dependências externas para executar os testes.
 - O código está modularizado conforme RNF02.
-
+- O arquivo user_system.py contém apenas a lógica de negócio do sistema, enquanto a execução e a demonstração do cadastro são realizadas em módulos separados, o que facilita a verificação e validação por meio de testes automatizados.
